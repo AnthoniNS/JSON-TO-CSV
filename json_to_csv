@@ -1,6 +1,5 @@
 import pandas as pd
 
 df = pd.read_json('teste.json')
-teste = df.to_csv('ssd.csv', sep=';', quotechar='"', encoding='utf8')
+df.to_csv('ssd.csv', sep=';', quotechar='"', encoding='utf8')
 
-print(teste)
