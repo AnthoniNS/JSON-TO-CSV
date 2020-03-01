@@ -1,5 +1,10 @@
 import pandas as pd
 
 df = pd.read_json('teste.json')
+
+df = pd.read_csv('ssd.csv', sep=';', quotechar='"', encoding='utf8', index_col=[0])
+df['resultado'] = df['valor1'] + df['valor2']
 df.to_csv('ssd.csv', sep=';', quotechar='"', encoding='utf8')
 
+
+#df['resultado'] = df['valor1'] + df['valor2'], faz a soma de 2 tabelas e adiciona outra tabela(Resultado)
