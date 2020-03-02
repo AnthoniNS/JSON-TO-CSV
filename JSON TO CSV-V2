@@ -1,0 +1,18 @@
+import pandas as pd
+import json
+ 
+with open('teste.json', 'r') as json_file:
+    json_dict = dict(json.loads(json_file.read()))
+    json_dict['resultado'] = list()
+ 
+with open('teste.json', 'w') as json_file:
+    valor_one = json_dict['valor1']
+    valor_two = json_dict['valor2']
+    for x in zip(valor_one, valor_two):
+        json_dict['resultado'].append(sum(x))
+ 
+    json_file.write(json.dumps(json_dict, indent=4))
+ 
+ 
+df = pd.read_json('teste.json')
+df.to_csv('ssd.csv', sep=';', quotechar='"', encoding='utf8')
